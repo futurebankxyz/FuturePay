@@ -1,5 +1,5 @@
 import { gql } from "apollo-boost";
-
+// eslint-disable-next-line
 const UNISWAP_ENDPOINT = 'https://api.thegraph.com/subgraphs/name/graphprotocol/uniswap';
 const ENS_ENDPOINT = 'https://api.thegraph.com/subgraphs/name/ensdomains/ens';
 const AAVE_ENDPOINT = 'https://api.thegraph.com/subgraphs/name/aave/protocol';
