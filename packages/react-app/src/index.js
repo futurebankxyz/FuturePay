@@ -1,9 +1,11 @@
-import React from "react";
+import React  from "react";
 import ReactDOM from "react-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
+
 import "./index.css";
 import App from "./App";
+
 
 // This is the official Aave subgraph. You can replace it with your own, if you need to.
 // See all subgraphs: https://thegraph.com/explorer/
@@ -13,7 +15,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+      <App />
   </ApolloProvider>,
-  document.getElementById("root"),
+  document.getElementById("root")
 );
