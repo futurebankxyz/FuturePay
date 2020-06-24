@@ -17,11 +17,19 @@
     "react-app:build": "yarn workspace @loopring-pay/react-app build",
     "react-app:eject": "yarn workspace @loopring-pay/react-app eject",
     "react-app:start": "yarn workspace @loopring-pay/react-app start",
-    "react-app:test": "yarn workspace @loopring-pay/react-app test"
+    "react-app:test": "yarn workspace @loopring-pay/react-app test",
+    "subgraph:auth": "yarn workspace @loopring-pay/subgraph auth",
+    "subgraph:codegen": "yarn workspace @loopring-pay/subgraph codegen",
+    "subgraph:build": "yarn workspace @loopring-pay/subgraph build",
+    "subgraph:deploy": "yarn workspace @loopring-pay/subgraph deploy"
   },
   "workspaces": {
     "packages": [
       "packages/*"
+    ],
+    "nohoist": [
+      "**/@graphprotocol/graph-ts",
+      "**/@graphprotocol/graph-ts/**"
     ]
   }
 }

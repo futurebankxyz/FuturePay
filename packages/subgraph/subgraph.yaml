@@ -1,0 +1,28 @@
+specVersion: 0.0.2
+description: Subgraph that indexes the blockchain data
+repository: https://github.com/sablierhq/sablier-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: lcrToken
+    network: mainnet
+    source:
+      abi: lcrToken
+      address: "0xbbbbca6a901c926f240b89eacb641d8aec7aeafd"
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      abis:
+        - name: lcrToken
+          file: ../contracts/src/abis/lcrToken.json
+      entities:
+        - Token
+        - Transfer
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: Approval(indexed address, indexed address, uint256)
+          handler: handleApproval
+      file: ./src/mappings/transfers.ts
+      language: wasm/assemblyscript
